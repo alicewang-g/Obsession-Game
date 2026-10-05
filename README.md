@@ -12,6 +12,7 @@ Components & SetupRings (1–10): Each player starts with 10 rings, all initiall
 Ring States: DOWN: The default starting state. UP: The ring has been moved up during the current turn. SAFE: The ring has been permanently locked at the end of a round (cannot easily be targeted or knocked back).
 
 Game Mechanics & Turn Rules
+
 On your turn, you roll two dice and use their values to make move commands.
 1. Moving Your Own Rings (u / UP) 
 Moving a ring UP changes its state from DOWN to UP, or from SAFE back to UP. You can move a ring matching individual die values: E.g., if you roll a 2 and a 4, you can move ring 2 UP and ring 4 UP (u2u4) or the sum of both dice: E.g., if you roll a 2 and a 4 (sum = 6), you can move ring 6 UP (u6).
@@ -22,13 +23,16 @@ Full Consumption: If you use both rolled dice completely in a single move (e.g.,
 Partial Consumption: If you only use one die value, your turn automatically ends, and control passes to the opponent.
 
 Command Notation
+
 When prompted with turn:, enter your action as a single string combining move types and ring numbers
 Example: uXu6 = Push ring 6 UP on your board (using sum or single die), dXd4 = Push ring 4 DOWN on the opponent's board,uXdYu3d5 = Push your ring 3 UP and push opponent's ring 5 DOWN. Duplicate moves like d3d3 are invalid.
 
 Main Menu Options
+
 When presented with (p)lay (e)ndround (q)uit: :p (Play): Prompt for a turn: command using the current dice values.e (End Round): End your active turn. All your current UP rings lock into SAFE state, and the computer takes its automatic turns.q (Quit): Terminate the game early.
 
 Project Architecture
+
 The codebase is built with modular C++ OOP principles:
 Die.cpp / DieManager.cpp: Handles uniform random generation for rolling single and dual 6-sided dice.
 Ring.cpp: Tracks ring values (1–10) and state transitions (DOWN, UP, SAFE).
